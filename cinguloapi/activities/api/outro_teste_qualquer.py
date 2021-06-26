@@ -1,0 +1,16 @@
+import requests
+from cinguloapi.activities.models import UserActivity
+
+
+url = "https://static.cingulo.com/bi/user_activities.json"
+response_data = requests.get(url)
+data_users = response_data.json()
+
+
+i = 0
+while i < 40:
+    user_activity = UserActivity()
+    user_activity.user_id = data_users[i]['id']
+    user_activity.activities = data_users[i]['activities']
+    user_activity.save()
+    i += 1

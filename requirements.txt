@@ -1,0 +1,26 @@
+# Django
+asgiref==3.3.4
+Django==3.2.4
+pytz==2021.1
+sqlparse==0.4.1
+
+# Decouple
+python-decouple==3.4
+
+# Django Rest Framework
+djangorestframework==3.12.4
+markdown==3.3.4
+django-filter==2.4.0
+
+# Flake8 para validar qualidade de código
+flake8==3.9.2
+mccabe==0.6.1
+pycodestyle==2.7.0
+pyflakes==2.3.1
+
+# Requests para fazer chamadas Http
+certifi==2021.5.30
+chardet==4.0.0
+idna==2.10
+requests==2.25.1
+urllib3==1.26.6
