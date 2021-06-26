@@ -1,4 +1,5 @@
 import requests
+import json
 
 
 url = "https://static.cingulo.com/bi/user_activities.json"
@@ -1139,10 +1140,94 @@ for b in range(365):
     a = 0
     b += 1
 
-jan_data = {'01': jan_01, '02': jan_02, '03': jan_03, '04': jan_04, '05': jan_05, '06': jan_06,
-            '07': jan_07, '08': jan_08, '09': jan_09, '10': jan_10, '11': jan_11, '12': jan_12,
-            '13': jan_13, '14': jan_14, '15': jan_15, '16': jan_16, '17': jan_17, '18': jan_18,
-            '19': jan_19, '20': jan_20, '21': jan_21, '22': jan_22, '23': jan_23, '24': jan_24,
-            '25': jan_25, '26': jan_26, '27': jan_27, '28': jan_28, '29': jan_29, '30': jan_30, '31': jan_31,
-            }
-print(jan_data)
+jan_data = {'Dia 01': jan_01, 'Dia 02': jan_02, 'Dia 03': jan_03, 'Dia 04': jan_04, 'Dia 05': jan_05, 'Dia 06': jan_06,
+            'Dia 07': jan_07, 'Dia 08': jan_08, 'Dia 09': jan_09, 'Dia 10': jan_10, 'Dia 11': jan_11, 'Dia 12': jan_12,
+            'Dia 13': jan_13, 'Dia 14': jan_14, 'Dia 15': jan_15, 'Dia 16': jan_16, 'Dia 17': jan_17, 'Dia 18': jan_18,
+            'Dia 19': jan_19, 'Dia 20': jan_20, 'Dia 21': jan_21, 'Dia 22': jan_22, 'Dia 23': jan_23, 'Dia 24': jan_24,
+            'Dia 25': jan_25, 'Dia 26': jan_26, 'Dia 27': jan_27, 'Dia 28': jan_28, 'Dia 29': jan_29, 'Dia 30': jan_30,
+            'Dia 31': jan_31}
+
+fev_data = {'Dia 01': fev_01, 'Dia 02': fev_02, 'Dia 03': fev_03, 'Dia 04': fev_04, 'Dia 05': fev_05, 'Dia 06': fev_06,
+            'Dia 07': fev_07, 'Dia 08': fev_08, 'Dia 09': fev_09, 'Dia 10': fev_10, 'Dia 11': fev_11, 'Dia 12': fev_12,
+            'Dia 13': fev_13, 'Dia 14': fev_14, 'Dia 15': fev_15, 'Dia 16': fev_16, 'Dia 17': fev_17, 'Dia 18': fev_18,
+            'Dia 19': fev_19, 'Dia 20': fev_20, 'Dia 21': fev_21, 'Dia 22': fev_22, 'Dia 23': fev_23, 'Dia 24': fev_24,
+            'Dia 25': fev_25, 'Dia 26': fev_26, 'Dia 27': fev_27, 'Dia 28': fev_28}
+
+mar_data = {'Dia 01': mar_01, 'Dia 02': mar_02, 'Dia 03': mar_03, 'Dia 04': mar_04, 'Dia 05': mar_05, 'Dia 06': mar_06,
+            'Dia 07': mar_07, 'Dia 08': mar_08, 'Dia 09': mar_09, 'Dia 10': mar_10, 'Dia 11': mar_11, 'Dia 12': mar_12,
+            'Dia 13': mar_13, 'Dia 14': mar_14, 'Dia 15': mar_15, 'Dia 16': mar_16, 'Dia 17': mar_17, 'Dia 18': mar_18,
+            'Dia 19': mar_19, 'Dia 20': mar_20, 'Dia 21': mar_21, 'Dia 22': mar_22, 'Dia 23': mar_23, 'Dia 24': mar_24,
+            'Dia 25': mar_25, 'Dia 26': mar_26, 'Dia 27': mar_27, 'Dia 28': mar_28, 'Dia 29': mar_29, 'Dia 30': mar_30,
+            'Dia 31': mar_31}
+
+apr_data = {'Dia 01': apr_01, 'Dia 02': apr_02, 'Dia 03': apr_03, 'Dia 04': apr_04, 'Dia 05': apr_05, 'Dia 06': apr_06,
+            'Dia 07': apr_07, 'Dia 08': apr_08, 'Dia 09': apr_09, 'Dia 10': apr_10, 'Dia 11': apr_11, 'Dia 12': apr_12,
+            'Dia 13': apr_13, 'Dia 14': apr_14, 'Dia 15': apr_15, 'Dia 16': apr_16, 'Dia 17': apr_17, 'Dia 18': apr_18,
+            'Dia 19': apr_19, 'Dia 20': apr_20, 'Dia 21': apr_21, 'Dia 22': apr_22, 'Dia 23': apr_23, 'Dia 24': apr_24,
+            'Dia 25': apr_25, 'Dia 26': apr_26, 'Dia 27': apr_27, 'Dia 28': apr_28, 'Dia 29': apr_29, 'Dia 30': apr_30}
+
+may_data = {'Dia 01': may_01, 'Dia 02': may_02, 'Dia 03': may_03, 'Dia 04': may_04, 'Dia 05': may_05, 'Dia 06': may_06,
+            'Dia 07': may_07, 'Dia 08': may_08, 'Dia 09': may_09, 'Dia 10': may_10, 'Dia 11': may_11, 'Dia 12': may_12,
+            'Dia 13': may_13, 'Dia 14': may_14, 'Dia 15': may_15, 'Dia 16': may_16, 'Dia 17': may_17, 'Dia 18': may_18,
+            'Dia 19': may_19, 'Dia 20': may_20, 'Dia 21': may_21, 'Dia 22': may_22, 'Dia 23': may_23, 'Dia 24': may_24,
+            'Dia 25': may_25, 'Dia 26': may_26, 'Dia 27': may_27, 'Dia 28': may_28, 'Dia 29': may_29, 'Dia 30': may_30,
+            'Dia 31': may_31}
+
+jun_data = {'Dia 01': jun_01, 'Dia 02': jun_02, 'Dia 03': jun_03, 'Dia 04': jun_04, 'Dia 05': jun_05, 'Dia 06': jun_06,
+            'Dia 07': jun_07, 'Dia 08': jun_08, 'Dia 09': jun_09, 'Dia 10': jun_10, 'Dia 11': jun_11, 'Dia 12': jun_12,
+            'Dia 13': jun_13, 'Dia 14': jun_14, 'Dia 15': jun_15, 'Dia 16': jun_16, 'Dia 17': jun_17, 'Dia 18': jun_18,
+            'Dia 19': jun_19, 'Dia 20': jun_20, 'Dia 21': jun_21, 'Dia 22': jun_22, 'Dia 23': jun_23, 'Dia 24': jun_24,
+            'Dia 25': jun_25, 'Dia 26': jun_26, 'Dia 27': jun_27, 'Dia 28': jun_28, 'Dia 29': jun_29, 'Dia 30': jun_30}
+
+jul_data = {'Dia 01': jul_01, 'Dia 02': jul_02, 'Dia 03': jul_03, 'Dia 04': jul_04, 'Dia 05': jul_05, 'Dia 06': jul_06,
+            'Dia 07': jul_07, 'Dia 08': jul_08, 'Dia 09': jul_09, 'Dia 10': jul_10, 'Dia 11': jul_11, 'Dia 12': jul_12,
+            'Dia 13': jul_13, 'Dia 14': jul_14, 'Dia 15': jul_15, 'Dia 16': jul_16, 'Dia 17': jul_17, 'Dia 18': jul_18,
+            'Dia 19': jul_19, 'Dia 20': jul_20, 'Dia 21': jul_21, 'Dia 22': jul_22, 'Dia 23': jul_23, 'Dia 24': jul_24,
+            'Dia 25': jul_25, 'Dia 26': jul_26, 'Dia 27': jul_27, 'Dia 28': jul_28, 'Dia 29': jul_29, 'Dia 30': jul_30,
+            'Dia 31': jul_31}
+
+aug_data = {'Dia 01': aug_01, 'Dia 02': aug_02, 'Dia 03': aug_03, 'Dia 04': aug_04, 'Dia 05': aug_05, 'Dia 06': aug_06,
+            'Dia 07': aug_07, 'Dia 08': aug_08, 'Dia 09': aug_09, 'Dia 10': aug_10, 'Dia 11': aug_11, 'Dia 12': aug_12,
+            'Dia 13': aug_13, 'Dia 14': aug_14, 'Dia 15': aug_15, 'Dia 16': aug_16, 'Dia 17': aug_17, 'Dia 18': aug_18,
+            'Dia 19': aug_19, 'Dia 20': aug_20, 'Dia 21': aug_21, 'Dia 22': aug_22, 'Dia 23': aug_23, 'Dia 24': aug_24,
+            'Dia 25': aug_25, 'Dia 26': aug_26, 'Dia 27': aug_27, 'Dia 28': aug_28, 'Dia 29': aug_29, 'Dia 30': aug_30,
+            'Dia 31': aug_31}
+
+sep_data = {'Dia 01': sep_01, 'Dia 02': sep_02, 'Dia 03': sep_03, 'Dia 04': sep_04, 'Dia 05': sep_05, 'Dia 06': sep_06,
+            'Dia 07': sep_07, 'Dia 08': sep_08, 'Dia 09': sep_09, 'Dia 10': sep_10, 'Dia 11': sep_11, 'Dia 12': sep_12,
+            'Dia 13': sep_13, 'Dia 14': sep_14, 'Dia 15': sep_15, 'Dia 16': sep_16, 'Dia 17': sep_17, 'Dia 18': sep_18,
+            'Dia 19': sep_19, 'Dia 20': sep_20, 'Dia 21': sep_21, 'Dia 22': sep_22, 'Dia 23': sep_23, 'Dia 24': sep_24,
+            'Dia 25': sep_25, 'Dia 26': sep_26, 'Dia 27': sep_27, 'Dia 28': sep_28, 'Dia 29': sep_29, 'Dia 30': sep_30}
+
+oct_data = {'Dia 01': oct_01, 'Dia 02': oct_02, 'Dia 03': oct_03, 'Dia 04': oct_04, 'Dia 05': oct_05, 'Dia 06': oct_06,
+            'Dia 07': oct_07, 'Dia 08': oct_08, 'Dia 09': oct_09, 'Dia 10': oct_10, 'Dia 11': oct_11, 'Dia 12': oct_12,
+            'Dia 13': oct_13, 'Dia 14': oct_14, 'Dia 15': oct_15, 'Dia 16': oct_16, 'Dia 17': oct_17, 'Dia 18': oct_18,
+            'Dia 19': oct_19, 'Dia 20': oct_20, 'Dia 21': oct_21, 'Dia 22': oct_22, 'Dia 23': oct_23, 'Dia 24': oct_24,
+            'Dia 25': oct_25, 'Dia 26': oct_26, 'Dia 27': oct_27, 'Dia 28': oct_28, 'Dia 29': oct_29, 'Dia 30': oct_30,
+            'Dia 31': oct_31}
+
+nov_data = {'Dia 01': nov_01, 'Dia 02': nov_02, 'Dia 03': nov_03, 'Dia 04': nov_04, 'Dia 05': nov_05, 'Dia 06': nov_06,
+            'Dia 07': nov_07, 'Dia 08': nov_08, 'Dia 09': nov_09, 'Dia 10': nov_10, 'Dia 11': nov_11, 'Dia 12': nov_12,
+            'Dia 13': nov_13, 'Dia 14': nov_14, 'Dia 15': nov_15, 'Dia 16': nov_16, 'Dia 17': nov_17, 'Dia 18': nov_18,
+            'Dia 19': nov_19, 'Dia 20': nov_20, 'Dia 21': nov_21, 'Dia 22': nov_22, 'Dia 23': nov_23, 'Dia 24': nov_24,
+            'Dia 25': nov_25, 'Dia 26': nov_26, 'Dia 27': nov_27, 'Dia 28': nov_28, 'Dia 29': nov_29, 'Dia 30': nov_30}
+
+dec_data = {'Dia 01': dec_01, 'Dia 02': dec_02, 'Dia 03': dec_03, 'Dia 04': dec_04, 'Dia 05': dec_05, 'Dia 06': dec_06,
+            'Dia 07': dec_07, 'Dia 08': dec_08, 'Dia 09': dec_09, 'Dia 10': dec_10, 'Dia 11': dec_11, 'Dia 12': dec_12,
+            'Dia 13': dec_13, 'Dia 14': dec_14, 'Dia 15': dec_15, 'Dia 16': dec_16, 'Dia 17': dec_17, 'Dia 18': dec_18,
+            'Dia 19': dec_19, 'Dia 20': dec_20, 'Dia 21': dec_21, 'Dia 22': dec_22, 'Dia 23': dec_23, 'Dia 24': dec_24,
+            'Dia 25': dec_25, 'Dia 26': dec_26, 'Dia 27': dec_27, 'Dia 28': dec_28, 'Dia 29': dec_29, 'Dia 30': dec_30,
+            'Dia 31': dec_31}
+
+jan_json = json.dumps(jan_data)
+fev_json = json.dumps(fev_data)
+mar_json = json.dumps(mar_data)
+apr_json = json.dumps(apr_data)
+may_json = json.dumps(may_data)
+jun_json = json.dumps(jun_data)
+jul_json = json.dumps(jul_data)
+aug_json = json.dumps(aug_data)
+sep_json = json.dumps(sep_data)
+oct_json = json.dumps(oct_data)
+nov_json = json.dumps(nov_data)
+dec_json = json.dumps(dec_data)

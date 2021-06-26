@@ -16,26 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from cinguloapi.activities.api.viewsets import UserActivityViewSet, JanuaryDailyActivityViewSet, \
-    FebruaryDailyActivityViewSet, MarchDailyActivityViewSet, AprilDailyActivityViewSet, MayDailyActivityViewSet, \
-    JuneDailyActivityViewSet, JulyDailyActivityViewSet, AugustDailyActivityViewSet, SeptemberDailyActivityViewSet, \
-    OctoberDailyActivityViewSet, NovemberDailyActivityViewSet, DecemberDailyActivityViewSet, DailyActivityViewSet
+from cinguloapi.activities.api.viewsets import UserActivityViewSet, DailyActivityViewSet, MonthActivityViewSet
 
 router = routers.DefaultRouter()
 router.register(r'users', UserActivityViewSet)
 router.register(r'daily', DailyActivityViewSet)
-router.register(r'january', JanuaryDailyActivityViewSet)
-router.register(r'february', FebruaryDailyActivityViewSet)
-router.register(r'march', MarchDailyActivityViewSet)
-router.register(r'april', AprilDailyActivityViewSet)
-router.register(r'may', MayDailyActivityViewSet)
-router.register(r'june', JuneDailyActivityViewSet)
-router.register(r'july', JulyDailyActivityViewSet)
-router.register(r'august', AugustDailyActivityViewSet)
-router.register(r'september', SeptemberDailyActivityViewSet)
-router.register(r'october', OctoberDailyActivityViewSet)
-router.register(r'november', NovemberDailyActivityViewSet)
-router.register(r'december', DecemberDailyActivityViewSet)
+router.register(r'month', MonthActivityViewSet)
 
 
 urlpatterns = [
