@@ -127,3 +127,15 @@ daily_activity.name = 'atividades diarias'
 daily_activity.activities = year_data
 daily_activity.save()
 ```
+
+### Não está conseguindo visilizar os dados não é mesmo?
+#### Você precisa registrar um usuário
+##### É só você digitar exatamente o que está abaixo.
+```
+python manage.py createsuperuser
+admin
+admin@admin.com
+admin
+admin
+y
+```
