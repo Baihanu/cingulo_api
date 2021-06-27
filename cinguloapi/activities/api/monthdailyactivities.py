@@ -1219,18 +1219,6 @@ dec_data = {'Dia 01': dec_01, 'Dia 02': dec_02, 'Dia 03': dec_03, 'Dia 04': dec_
             'Dia 25': dec_25, 'Dia 26': dec_26, 'Dia 27': dec_27, 'Dia 28': dec_28, 'Dia 29': dec_29, 'Dia 30': dec_30,
             'Dia 31': dec_31}
 
-jan_json = json.dumps(jan_data)
-fev_json = json.dumps(fev_data)
-mar_json = json.dumps(mar_data)
-apr_json = json.dumps(apr_data)
-may_json = json.dumps(may_data)
-jun_json = json.dumps(jun_data)
-jul_json = json.dumps(jul_data)
-aug_json = json.dumps(aug_data)
-sep_json = json.dumps(sep_data)
-oct_json = json.dumps(oct_data)
-nov_json = json.dumps(nov_data)
-dec_json = json.dumps(dec_data)
 
 year_data = {
     'Dia 01': jan_01, 'Dia 02': jan_02, 'Dia 03': jan_03, 'Dia 04': jan_04, 'Dia 05': jan_05, 'Dia 06': jan_06, 'Dia 07': jan_07,

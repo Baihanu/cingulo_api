@@ -28,7 +28,8 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-#### Para cadastrar os dados do usuário:
+#### Para cadastrar os dados do usuário: Copie e cole
+O dados referentes ao usuário será visualizado em: localhost:8000/users/
 ```
 python manage.py shell
 import request
@@ -42,4 +43,76 @@ for i in range(40):
     user_activity.activities = data_users[i]['activities']
     user_activity.save()
 ```
-O dados referentes ao usuário será visualizado em: localhost:8000/users/
+
+#### Para cadastrar os dados referentes aos acessos mensais:
+O dados referentes ao usuário será visualizado em: localhost:8000/month/
+```
+from cinguloapi.activities.models import MonthActivity
+from cinguloapi.activities.api.monthdailyactivities import jan_data, fev_data, mar_data
+
+month_activity = MonthActivity()
+month_activity.name = 'janeiro'
+month_activity.activities = jan_data
+month_activity.save()
+
+month_activity = MonthActivity()
+month_activity.name = 'fevereiro'
+month_activity.activities = fev_data
+month_activity.save()
+
+month_activity = MonthActivity()
+month_activity.name = 'março'
+month_activity.activities = mar_data
+month_activity.save()
+
+from cinguloapi.activities.api.monthdailyactivities import apr_data, may_data, jun_data
+
+month_activity = MonthActivity()
+month_activity.name = 'abril'
+month_activity.activities = apr_data
+month_activity.save()
+
+month_activity = MonthActivity()
+month_activity.name = 'maio'
+month_activity.activities = may_data
+month_activity.save()
+
+month_activity = MonthActivity()
+month_activity.name = 'junho'
+month_activity.activities = jun_data
+month_activity.save()
+
+from cinguloapi.activities.api.monthdailyactivities import jul_data, aug_data, sep_data
+
+month_activity = MonthActivity()
+month_activity.name = 'julho'
+month_activity.activities = jul_data
+month_activity.save()
+
+month_activity = MonthActivity()
+month_activity.name = 'agosto'
+month_activity.activities = aug_data
+month_activity.save()
+
+month_activity = MonthActivity()
+month_activity.name = 'setembro'
+month_activity.activities = sep_data
+month_activity.save()
+
+from cinguloapi.activities.api.monthdailyactivities import oct_data, nov_data, dec_data
+
+month_activity = MonthActivity()
+month_activity.name = 'outubro'
+month_activity.activities = oct_data
+month_activity.save()
+
+month_activity = MonthActivity()
+month_activity.name = 'novembro'
+month_activity.activities = nov_data
+month_activity.save()
+
+month_activity = MonthActivity()
+month_activity.name = 'dezembro'
+month_activity.activities = dec_data
+month_activity.save()
+```
