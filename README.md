@@ -29,7 +29,7 @@ python manage.py runserver
 ```
 
 #### Para cadastrar os dados do usuário: Copie e cole
-O dados referentes ao usuário será visualizado em: localhost:8000/users/
+##### Os dados referentes aos usuário serão visualizados em: localhost:8000/users/
 ```
 python manage.py shell
 import request
@@ -45,7 +45,7 @@ for i in range(40):
 ```
 
 #### Para cadastrar os dados referentes aos acessos mensais:
-O dados referentes ao usuário será visualizado em: localhost:8000/month/
+##### Os dados referentes aos usuário serão visualizados em: localhost:8000/month/
 ```
 from cinguloapi.activities.models import MonthActivity
 from cinguloapi.activities.api.monthdailyactivities import jan_data, fev_data, mar_data
@@ -115,4 +115,15 @@ month_activity = MonthActivity()
 month_activity.name = 'dezembro'
 month_activity.activities = dec_data
 month_activity.save()
+```
+
+#### Para cadastrar as atividades diárias
+##### Os dados referentes as atividades dos usuários serão visualizados em: localhost:8000/daily/
+```
+from cinguloapi.activities.api.monthdailyactivities import year_data
+from cinguloapi.activities.models import DailyActivity
+daily_activity = DailyActivity()
+daily_activity.name = 'atividades diarias'
+daily_activity.activities = year_data
+daily_activity.save()
 ```
